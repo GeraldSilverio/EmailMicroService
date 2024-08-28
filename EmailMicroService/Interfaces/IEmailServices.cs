@@ -1,6 +1,6 @@
-﻿using EmailService.BussinessLayer.Dtos;
+﻿using EmailService.Dtos;
 
-namespace EmailService.BussinessLayer.Interfaces
+namespace EmailService.Interfaces
 {
     public interface IEmailServices
     {

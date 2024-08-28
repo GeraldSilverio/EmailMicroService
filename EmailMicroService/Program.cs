@@ -1,5 +1,5 @@
-using EmailService.BussinessLayer.Interfaces;
-using EmailService.BussinessLayer.Services;
+using EmailService.Interfaces;
+using EmailService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,18 +11,17 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IEmailServices, EmailServices>();
 
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+app.UseCors(x => x.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
 app.UseAuthorization();
 

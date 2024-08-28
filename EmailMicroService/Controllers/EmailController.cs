@@ -1,5 +1,5 @@
-﻿using EmailService.BussinessLayer.Dtos;
-using EmailService.BussinessLayer.Interfaces;
+﻿using EmailService.Dtos;
+using EmailService.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

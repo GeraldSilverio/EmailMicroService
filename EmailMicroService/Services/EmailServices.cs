@@ -1,9 +1,9 @@
-﻿using EmailService.BussinessLayer.Dtos;
-using EmailService.BussinessLayer.Interfaces;
+﻿using EmailService.Dtos;
+using EmailService.Interfaces;
 using MailKit.Security;
 using MimeKit;
 
-namespace EmailService.BussinessLayer.Services
+namespace EmailService.Services
 {
     public class EmailServices : IEmailServices
     {
@@ -13,7 +13,7 @@ namespace EmailService.BussinessLayer.Services
             {
                 MimeMessage message = new()
                 {
-                    Sender = MailboxAddress.Parse(emailRequest.From ?? emailRequest.EmailFrom)
+                    Sender = MailboxAddress.Parse(emailRequest.SmtpUser)
                 };
 
                 message.To.Add(MailboxAddress.Parse(emailRequest.To));

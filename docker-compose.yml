@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  emailmicroservice:
+    image: ${DOCKER_REGISTRY-}emailmicroservice
+    build:
+      context: .
+      dockerfile: EmailMicroService/Dockerfile
